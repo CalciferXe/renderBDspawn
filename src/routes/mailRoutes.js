@@ -6,7 +6,7 @@ import { MailController } from '../controllers/mailController.js';
 const router = express.Router();
 
 //enviarCorreo
-router.post('/send-email', MailController); // Ruta para enviar correos
+router.post('/', MailController); // Ruta para enviar correos
 
 
 export default router;

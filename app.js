@@ -6,11 +6,21 @@ import bodyParser from 'body-parser';
 import userRoutes from './src/routes/userRoutes.js';
 import mailRoutes from './src/routes/mailRoutes.js';
 import { config } from 'dotenv';
+import cors from 'cors';  // Importa el paquete cors
+
 
 // Cargar variables de entorno
 config();
 
 const app = express();
+
+// Configurar CORS
+const corsOptions = {
+  origin: 'http://localhost:3001', // Permitir solicitudes desde tu frontend (ajusta según tu configuración)
+  methods: ['GET', 'POST'], // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
+};
+
 
 // Middleware
 app.use(bodyParser.json()); // Para parsear JSON en las peticiones

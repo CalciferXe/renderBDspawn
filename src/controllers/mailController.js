@@ -28,7 +28,7 @@ export const MailController = async (req, res) => {
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
             .header {
-                background: #4CAF50;
+                background: #96ac60;
                 color: #fff;
                 text-align: center;
                 padding: 20px;
@@ -53,7 +53,7 @@ export const MailController = async (req, res) => {
                 margin: 20px 0;
             }
             .button {
-                background: #4CAF50;
+                background: #96ac60;
                 color: #ffffff;
                 text-decoration: none;
                 padding: 10px 20px;
@@ -75,7 +75,7 @@ export const MailController = async (req, res) => {
     <body>
         <div class="email-container">
             <div class="header">
-                <img src="http://localhost:3000/image.png" alt="SpawnChatter Logo">
+                <img src="https://renderbdspawn.onrender.com/image.png" alt="SpawnChatter Logo">
                 <h1>SpawnChatter</h1>
             </div>
 
@@ -85,7 +85,7 @@ export const MailController = async (req, res) => {
                 <p>Si tienes alguna pregunta o necesitas ayuda, no dudes en ponerte en contacto con nuestro equipo de soporte.</p>
                 
                 <div class="button-container">
-                    <a href="https://spawnchatter.com" class="button">Visita SpawnChatter</a>
+                    <a href="localhost:3001" class="button">Visita SpawnChatter</a>
                 </div>
             </div>
 

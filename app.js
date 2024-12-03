@@ -3,6 +3,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import userRoutes from './src/routes/userRoutes.js';
+import mailRoutes from './src/routes/mailRoutes.js';
 import { config } from 'dotenv';
 
 // Cargar variables de entorno
@@ -22,6 +23,8 @@ app.use('/api/users', userRoutes); // Define las rutas de los usuarios
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
+// Rutas de envio Correo
+app.use('/api/send-email', mailRoutes);
 
 // Configuración del puerto
 const PORT = process.env.PORT || 3001; // Obtén el puerto desde el archivo .env o usa 3001 por defecto

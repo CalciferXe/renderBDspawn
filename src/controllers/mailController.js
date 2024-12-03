@@ -1,10 +1,9 @@
-import { transporter } from '../config/mailer.js';
+const { transporter } = require('../config/mailer.js');  // Usar require
 
 export const MailController = async (req, res) => {
-    const { to, subject, text } = req.body; // Recibe el correo del destinatario, el asunto y el texto
+  const { to, subject, text } = req.body;  // Recibe el correo, el asunto y el texto
 
-    // HTML con logo y mensaje personalizado
-    const htmlContent = `
+  const htmlContent = `
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -101,17 +100,16 @@ export const MailController = async (req, res) => {
     try {
         // Enviar el correo
         await transporter.sendMail({
-            from: '"Notificaciones 👌" <appspawnchatter@gmail.com>',
-            to,  // Aquí va el correo del destinatario que recibimos en req.body
-            subject: subject || 'Servicio de Notificaciones',  // Usamos el asunto enviado o uno por defecto
-            text: text,  // Mensaje de texto simple
-            html: htmlContent,  // HTML con la estructura que hemos definido
+          from: '"Notificaciones 👌" <appspawnchatter@gmail.com>',
+          to,
+          subject: subject || 'Servicio de Notificaciones',
+          text: text,
+          html: htmlContent,
         });
-
-        // Responder exitosamente
+    
         res.status(200).json({ message: 'Correo enviado correctamente' });
-    } catch (error) {
+      } catch (error) {
         console.error('Error enviando el correo:', error);
         res.status(500).json({ message: 'Error al enviar el correo', error });
-    }
-};
+      }
+    };

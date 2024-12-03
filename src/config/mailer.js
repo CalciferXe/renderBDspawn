@@ -1,17 +1,16 @@
 const nodemailer = require('nodemailer');
-require('dotenv').config();  // Cargar las variables de entorno desde .env
+require('dotenv').config(); // Cargar las variables de entorno
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
-  secure: true, // Usar true para puerto 465
+  secure: true,
   auth: {
-    user: process.env.NOTIFICATIONS_SERVICE_USER, // Configura el correo en el archivo .env
-    pass: process.env.NOTIFICATIONS_SERVICE_PW, // Configura la contraseña en el archivo .env
+    user: process.env.NOTIFICATIONS_SERVICE_USER, // Configura esto en .env
+    pass: process.env.NOTIFICATIONS_SERVICE_PW, // Configura esto en .env
   },
 });
 
-// Verificar la conexión del transportador
 transporter.verify(function (error, success) {
   if (error) {
     console.error('Error al verificar el transportador:', error);
@@ -20,4 +19,4 @@ transporter.verify(function (error, success) {
   }
 });
 
-module.exports = { transporter }; // Exportamos el transporter para usarlo en otros archivos
+module.exports = { transporter };  // Exportar el transporter

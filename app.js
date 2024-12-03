@@ -1,4 +1,4 @@
-// src/app.js
+//AQUI INTRODUCIR RUTAS
 
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -13,6 +13,8 @@ const app = express();
 // Middleware
 app.use(bodyParser.json()); // Para parsear JSON en las peticiones
 
+app.use('/image.png', express.static('src/image.png'));
+
 // Rutas
 app.use('/api/users', userRoutes); // Define las rutas de los usuarios
 
@@ -26,3 +28,4 @@ const PORT = process.env.PORT || 3001; // Obtén el puerto desde el archivo .env
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+

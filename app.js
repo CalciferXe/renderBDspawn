@@ -12,9 +12,9 @@ config();
 
 const app = express();
 
-// Configurar CORS
+// Configurar CORS para aceptar solicitudes desde cualquier origen
 const corsOptions = {
-  origin: 'http://localhost:3001', // Permitir solicitudes desde tu frontend local
+  origin: '*', // Permitir solicitudes desde cualquier origen
   methods: ['GET', 'POST'], // Métodos permitidos
   allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
 };

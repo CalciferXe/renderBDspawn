@@ -1,4 +1,4 @@
-import { transporter } from 'src/config/mailer.js';
+import { transporter } from '../config/mailer.js';
 
 export const MailController = async (req, res) => {
     const { to, subject, text } = req.body; // Recibe el correo del destinatario, el asunto y el texto

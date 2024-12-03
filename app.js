@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 // Rutas de envio Correo
-app.use('/api/send-email', mailRoutes);
+app.use('/api', mailRoutes); 
 
 // Configuración del puerto
 const PORT = process.env.PORT || 3001; // Obtén el puerto desde el archivo .env o usa 3001 por defecto

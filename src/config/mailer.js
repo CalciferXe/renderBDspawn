@@ -1,3 +1,4 @@
+//src\config\mailer.js
 import nodemailer from 'nodemailer';  // Usar import en lugar de require
 import dotenv from 'dotenv';  // Usar import para dotenv
 

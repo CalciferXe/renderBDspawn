@@ -1,7 +1,7 @@
-const { transporter } = require('../config/mailer.js');  // Usar require
+import { transporter } from '../config/mailer.js';  // Usar import en lugar de require
 
 export const MailController = async (req, res) => {
-  const { to, subject, text } = req.body;  // Recibe el correo, el asunto y el texto
+  const { to, subject, text } = req.body;
 
   const htmlContent = `
     <!DOCTYPE html>

@@ -1,5 +1,7 @@
-const nodemailer = require('nodemailer');
-require('dotenv').config(); // Cargar las variables de entorno
+import nodemailer from 'nodemailer';  // Usar import en lugar de require
+import dotenv from 'dotenv';  // Usar import para dotenv
+
+dotenv.config();  // Cargar variables de entorno
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -11,6 +13,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Verificación de la conexión
 transporter.verify(function (error, success) {
   if (error) {
     console.error('Error al verificar el transportador:', error);
@@ -19,4 +22,4 @@ transporter.verify(function (error, success) {
   }
 });
 
-module.exports = { transporter };  // Exportar el transporter
+export { transporter };  // Usar export para exponer el transporter
